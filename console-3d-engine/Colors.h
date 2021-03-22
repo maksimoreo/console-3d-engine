@@ -1,0 +1,71 @@
+#pragma once
+
+#include <Windows.h>
+
+typedef WORD Color;
+typedef CHAR_INFO ColoredChar;
+
+/*
+FGBLUE     0x0001    0000 0000 0000 0001    1
+FGGREEN    0x0002    0000 0000 0000 0010    2
+FGRED      0x0004    0000 0000 0000 0100    4
+FGINT      0x0008    0000 0000 0000 1000    8
+BGBLUE     0x0010    0000 0000 0001 0000    16
+BGGREEN    0x0020    0000 0000 0010 0000    32
+BGRED      0x0040    0000 0000 0100 0000    64
+BGINT      0x0080    0000 0000 1000 0000    128
+*/
+
+// Background colors, dark
+#define BGBLACK     0                                // 0
+#define BGRED       BACKGROUND_RED                   // 64
+#define BGBLUE      BACKGROUND_BLUE                  // 16
+#define BGGREEN     BACKGROUND_GREEN                 // 32
+#define BGYELLOW    BGRED | BGGREEN                  // 96
+#define BGMAGENTA   BGRED | BGBLUE                   // 80
+#define BGCYAN      BGGREEN | BGBLUE                 // 48
+#define BGGREY      BGRED | BGGREEN | BGBLUE         // 112
+
+// Background colors, bright
+#define BGLRED      BGRED | BACKGROUND_INTENSITY     // 228
+#define BGLBLUE     BGBLUE | BACKGROUND_INTENSITY    // 144
+#define BGLGREEN    BGGREEN | BACKGROUND_INTENSITY   // 160
+#define BGLYELLOW   BGYELLOW | BACKGROUND_INTENSITY  // 224
+#define BGPURPLE    BGMAGENTA | BACKGROUND_INTENSITY // 208
+#define BGLCYAN     BGCYAN | BACKGROUND_INTENSITY    // 176
+#define BGWHITE     BGGREY | BACKGROUND_INTENSITY    // 240
+
+// Foreground colors, dark
+#define FGBLACK 0                                    // 0
+#define FGRED       FOREGROUND_RED                   // 4
+#define FGGREEN     FOREGROUND_GREEN                 // 2
+#define FGBLUE      FOREGROUND_BLUE                  // 1
+#define FGYELLOW    FGRED | FGGREEN                  // 6
+#define FGMAGENTA   FGRED | FGBLUE                   // 5
+#define FGCYAN      FGGREEN | FGBLUE                 // 3
+#define FGGREY      FGRED | FGGREEN | FGBLUE         // 7
+
+// Foreground colors, bright
+#define FGLRED      FGRED | FOREGROUND_INTENSITY     // 12
+#define FGLBLUE     FGBLUE | FOREGROUND_INTENSITY    // 9
+#define FGLGREEN    FGGREEN | FOREGROUND_INTENSITY   // 10
+#define FGLYELLOW   FGYELLOW | FOREGROUND_INTENSITY  // 14
+#define FGPURPLE    FGMAGENTA | FOREGROUND_INTENSITY // 13
+#define FGLCYAN     FGCYAN | FOREGROUND_INTENSITY    // 11
+#define FGWHITE     FGGREY | FOREGROUND_INTENSITY    // 15
+
+const unsigned int NUMBER_OF_SHADES = 21;
+
+const ColoredChar SHADES[NUMBER_OF_SHADES] = {
+{ 32, BGBLACK }, { 32, BGGREY }, { 32, BGWHITE },
+{ 176, BGBLACK | FGGREY },{ 176, BGBLACK | FGWHITE },{ 176, BGGREY | FGBLACK },{ 176, BGGREY | FGWHITE },{ 176, BGWHITE | FGBLACK },{ 176, BGWHITE | FGGREY },
+{ 177, BGBLACK | FGGREY },{ 177, BGBLACK | FGWHITE },{ 177, BGGREY | FGBLACK },{ 177, BGGREY | FGWHITE },{ 177, BGWHITE | FGBLACK },{ 177, BGWHITE | FGGREY },
+{ 178, BGBLACK | FGGREY },{ 178, BGBLACK | FGWHITE },{ 178, BGGREY | FGBLACK },{ 178, BGGREY | FGWHITE },{ 178, BGWHITE | FGBLACK },{ 178, BGWHITE | FGGREY }
+};
+
+const ColoredChar SHADES2[NUMBER_OF_SHADES] = {
+{ 32, BGBLACK },{ 176, BGBLACK | FGGREY },{ 176, BGBLACK | FGWHITE },
+{ 177, BGBLACK | FGGREY },{ 177, BGBLACK | FGWHITE },{ 178, BGBLACK | FGGREY },{ 178, BGGREY | FGBLACK },{ 178, BGBLACK | FGWHITE },{ 178, BGWHITE | FGBLACK },
+{ 177, BGGREY | FGBLACK },{ 176, BGGREY | FGBLACK },{ 176, BGGREY | FGWHITE },{ 177, BGGREY | FGWHITE },{ 177, BGWHITE | FGBLACK },{ 177, BGWHITE | FGGREY },
+{ 176, BGWHITE | FGGREY },{ 176, BGBLACK | FGGREY },    { 178, BGGREY | FGBLACK },{ 178, BGGREY | FGWHITE },{ 178, BGWHITE | FGBLACK },{ 178, BGWHITE | FGGREY }
+};

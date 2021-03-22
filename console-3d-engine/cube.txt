@@ -1,0 +1,41 @@
+# cube
+
+v -1.0 -1.0 1.0
+v -1.0 1.0 1.0
+v 1.0 1.0 1.0
+v 1.0 -1.0 1.0
+
+v -1.0 -1.0 -1.0
+v -1.0 1.0 -1.0
+v 1.0 1.0 -1.0
+v 1.0 -1.0 -1.0
+
+setcharcolor _ 64
+
+f 1 3 2
+f 1 4 3
+
+setcharcolor _ 16
+
+f 1 2 6
+f 1 6 5
+
+setcharcolor _ 32
+
+f 1 5 8
+f 1 8 4
+
+setcharcolor _ 96
+
+f 7 2 3
+f 7 6 2
+
+setcharcolor _ 80
+
+f 7 3 4
+f 7 4 8
+
+setcharcolor _ 48
+
+f 7 8 5
+f 7 5 6
